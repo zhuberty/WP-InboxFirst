@@ -1,6 +1,8 @@
 # WP-InboxFirst
 InboxFirst WordPress Plugin
 
+Description: Connect Gravity Forms entries to InboxFirst.
+
 *This plugin requires the Gravity Forms plugin in order to work correctly.
 
 <b>Instructions</b>:

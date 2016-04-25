@@ -1,7 +1,7 @@
 # WP-InboxFirst
 InboxFirst WordPress Plugin
 
-*This plugin requires gravity forms.
+*This plugin requires the Gravity Forms plugin in order to work correctly.
 
 <b>Instructions</b>:
 

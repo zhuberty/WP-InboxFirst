@@ -13,6 +13,7 @@ if ( class_exists( 'GFForms' ) ) {
 		protected $mailing_list_id = MAILING_ID;
 		protected $field_map = array( array("name" => "email", "label" => "email") );
 		protected $custom_fields = array();
+		protected $allow_subscriber_updates = ALLOW_SUBSCRIBER_UPDATES;
 	
 		public function init()
 		{
@@ -103,20 +104,25 @@ if ( class_exists( 'GFForms' ) ) {
 				
 			}else {
 				
-				# Get user demographics
-				$temp_user_demographics = (array) $user->data[0]->custom_fields;
-				$user_demographics = array();
-				# Format user demographics for the update process
-				foreach($temp_user_demographics as $ud)
+				# If subscriber updates are allowed
+				if ( $this->allow_subscriber_updates == "on")
 				{
-					# name of field => old value of field
-					$user_demographics[$ud->name] = $ud->value;
+					# Get user demographics
+					$temp_user_demographics = (array) $user->data[0]->custom_fields;
+					$user_demographics = array();
+					# Format user demographics for the update process
+					foreach($temp_user_demographics as $ud)
+					{
+						# name of field => old value of field
+						$user_demographics[$ud->name] = $ud->value;
+					}
+					# Update demographics
+					$user_demographics = $this->process_demographics($entry, $settings, $user_demographics);
+					
+					# Update user in InboxFirst
+					$user_response = InboxFirst\Subscribers\update_subscriber($this->mailing_list_id, $email, $user_demographics);
 				}
-				# Update demographics
-				$user_demographics = $this->process_demographics($entry, $settings, $user_demographics);
 				
-				# Update user in InboxFirst
-				$user_response = InboxFirst\Subscribers\update_subscriber($this->mailing_list_id, $email, $user_demographics);
 			}
 		}
 		

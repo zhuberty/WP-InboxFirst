@@ -15,6 +15,7 @@ add_action( 'admin_init', function() {
     register_setting( 'wp_inboxfirst', 'wp_inboxfirst_api_key' );
     register_setting( 'wp_inboxfirst', 'wp_inboxfirst_org_id' );
     register_setting( 'wp_inboxfirst', 'wp_inboxfirst_mailing_id' );
+    register_setting( 'wp_inboxfirst', 'wp_inboxfirst_allow_subscriber_upates' );
 } );
 
 # Dashboard Menu Hooks

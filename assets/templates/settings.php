@@ -28,6 +28,10 @@ do_settings_sections('wp_inboxfirst');
 			<th class='row-title'>Mailing List ID</th>
 			<td scope='row'><input type='text' name='wp_inboxfirst_mailing_id' value='<?= esc_attr( get_option( 'wp_inboxfirst_mailing_id' ) ); ?>' /></td>
 		</tr>
+		<tr valign='top'>
+			<th class='row-title'>Allow Subscriber Updates</th>
+			<td scope='row'><input type="checkbox" name="wp_inboxfirst_allow_subscriber_upates" checked /></td>
+		</tr>
 </table>
 
 <!-- Submit -->

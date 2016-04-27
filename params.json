@@ -1,0 +1,6 @@
+{
+  "name": "Wp-inboxfirst",
+  "tagline": "InboxFirst WordPress Plugin",
+  "body": "# WP-InboxFirst\r\nInboxFirst WordPress Plugin\r\n\r\nDescription: Connect Gravity Forms entries to InboxFirst.\r\n\r\n*This plugin requires the Gravity Forms plugin in order to work correctly.\r\n\r\n<b>Instructions</b>:\r\n\r\n<b>Step 1</b>: Download the Zip File by clicking the \"Download Zip\" button toward the top of the page in GitHub (https://github.com/zhuberty/WP-InboxFirst).\r\n\r\n<b>Step 2</b>: Go into your WordPress->Plugins menu, and click \"Upload Plugin\". Choose the zip file that you just downloaded, and then activate the plugin.\r\n\r\n<b>Step 3</b>: Go to the InboxFirst Menu and add your InboxFirst API Key, Organization ID, and Mailing List ID that you wish to subscribe emails to.\r\n\r\n<b>Step 4</b>: Go to the Gravity Form that you wish to connect to InboxFirst.  Under Settings->InboxFirst: select which of the Gravity Forms fields that should correspond with InboxFirst Custom Fields.\r\n\r\nPlease report any bugs that you find. Thank you.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

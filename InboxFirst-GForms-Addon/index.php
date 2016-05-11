@@ -53,7 +53,7 @@ if ( class_exists( 'GFForms' ) ) {
 				foreach ($this->field_map as $fm)
 				{
 					# If duplicate found
-					if ( $fm['name'] == $cf->name )
+					if ( str_replace(' ', '__SPACE__', $fm['name']) == str_replace(' ', '__SPACE__', $cf->name) )
 					{
 						$duplicate = true;
 					}
@@ -62,7 +62,7 @@ if ( class_exists( 'GFForms' ) ) {
 				# Not a duplicate, add the field
 				if ( ! $duplicate)
 				{
-					$this->field_map[] = array("name" => $cf->name, "label" => $cf->name);
+					$this->field_map[] = array("name" => str_replace(' ', '__SPACE__', $cf->name), "label" => $cf->name);
 				}
 				
 			}
@@ -133,6 +133,9 @@ if ( class_exists( 'GFForms' ) ) {
 			{
 				# Remove "map_fields" from beginning of field name
 				$custom_field_name = substr($custom_field_name, 11);
+				
+				# Add spaces back into the field name, if they were included in the settings
+				$custom_field_name = str_replace('__SPACE__', ' ', $custom_field_name);
 				
 				# Get InboxFirst custom field settings
 				$cf = null;

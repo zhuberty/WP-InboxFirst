@@ -12,6 +12,9 @@ settings_fields( 'wp_inboxfirst' );
 
 # Print the authorized settings options to the page
 do_settings_sections('wp_inboxfirst');
+
+$checked_status = '';
+if (get_option('wp_inboxfirst_allow_subscriber_upates') == 'on') $checked_status = 'checked';
 ?>
 
 <!-- Custom Fields Table -->
@@ -30,7 +33,7 @@ do_settings_sections('wp_inboxfirst');
 		</tr>
 		<tr valign='top'>
 			<th class='row-title'>Allow Subscriber Updates</th>
-			<td scope='row'><input type="checkbox" name="wp_inboxfirst_allow_subscriber_upates" checked /></td>
+			<td scope='row'><input type="checkbox" name="wp_inboxfirst_allow_subscriber_upates" <?php echo $checked_status; ?>/></td>
 		</tr>
 </table>
 

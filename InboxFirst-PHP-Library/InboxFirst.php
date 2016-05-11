@@ -22,8 +22,8 @@ if ( ! (defined(API_KEY) && defined(ORG_ID)) )
 {
 	# If they are not defined, set a generic default value,
 	# this should make error handling more elegant.
-	@define("API_KEY", "7ae3e390b47916b74c61d21b2ba5a8f15e34eac4");
-	@define("ORG_ID", 475);
+	@define("API_KEY", "");
+	@define("ORG_ID", 0);
 }
 
 # Load the rest of the modules
